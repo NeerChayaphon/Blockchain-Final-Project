@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Renderer from './Renderer.js';
 import Certification from "./Certification.json"
+import Certificates from './Certificates.js';
+import Navbar from './Navbar.js';
 
 // https://github.com/mnzsss/react-chakra-pagination
 
@@ -81,13 +83,15 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar/>
       { loading
         ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-        : <Renderer
-          certificates={certificates}
-          captureFile={captureFile}
-          uploadCertificate={uploadCertificate}
-        />
+        : <Certificates/>
+        // <Renderer
+        //   certificates={certificates}
+        //   captureFile={captureFile}
+        //   uploadCertificate={uploadCertificate}
+        // />
       }
     </div>
   );
