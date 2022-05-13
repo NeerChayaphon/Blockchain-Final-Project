@@ -25,11 +25,18 @@ function Certificates({ uploadCertificate, captureFile }) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    uploadCertificate(info,owner, captureFile);
+    uploadCertificate(info, owner, captureFile);
   };
   return (
     <>
-      <Button onClick={onOpen}>Add</Button>
+      <Button
+        bg={'green.400'}
+        _hover={{ bg: 'green.500' }}
+        color={'white'}
+        onClick={onOpen}
+      >
+        Add
+      </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -41,27 +48,22 @@ function Certificates({ uploadCertificate, captureFile }) {
               <form onSubmit={handleSubmit}>
                 <FormControl mb={2}>
                   <FormLabel>Owner Name</FormLabel>
-                  <Input
-                    
-                    onChange={e => setOwner(e.target.value)}
-                  />
+                  <Input onChange={e => setOwner(e.target.value)} />
                 </FormControl>
                 <FormControl mb={4}>
                   <FormLabel>Certification Details</FormLabel>
-                  <Input
-                   
-                    onChange={e => setInfo(e.target.value)}
-                  />
+                  <Input onChange={e => setInfo(e.target.value)} />
                 </FormControl>
 
-          
                 <input
                   type="file"
                   accept=".jpg, .jpeg, .png, .bmp, .gif"
                   onChange={captureFile}
                   id="fileUpload"
                 />
-                <Button w={'full'} size={'lg'} my={4} type="submit">Submit</Button>
+                <Button w={'full'} size={'lg'} my={4} type="submit">
+                  Submit
+                </Button>
               </form>
             </VStack>
           </ModalBody>

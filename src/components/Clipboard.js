@@ -21,7 +21,9 @@ const Clipboard = ({ shareData, type }) => {
           isReadOnly
           placeholder="Welcome"
         />
-        <Button onClick={onCopy} ml={2}>
+        <Button onClick={onCopy} ml={2} bg={'blue.400'}
+        _hover={{ bg: 'blue.500' }}
+        color={'white'}>
           {hasCopied ? 'Copied' : 'Copy'}
         </Button>
       </Flex>
