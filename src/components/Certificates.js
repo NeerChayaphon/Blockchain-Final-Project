@@ -16,7 +16,7 @@ import {
   Input,
 } from '@chakra-ui/react';
 
-import './styles.css';
+import '../styles.css';
 
 function Certificates({ uploadCertificate, captureFile }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -39,17 +39,17 @@ function Certificates({ uploadCertificate, captureFile }) {
           <ModalBody>
             <VStack w="full" h="full" spacing={3} alignItems="flex-start">
               <form onSubmit={handleSubmit}>
-                <FormControl>
+                <FormControl mb={2}>
                   <FormLabel>Owner Name</FormLabel>
                   <Input
-                    placeholder="John"
+                    
                     onChange={e => setOwner(e.target.value)}
                   />
                 </FormControl>
                 <FormControl mb={4}>
                   <FormLabel>Certification Details</FormLabel>
                   <Input
-                    placeholder="John"
+                   
                     onChange={e => setInfo(e.target.value)}
                   />
                 </FormControl>
