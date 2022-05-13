@@ -1,6 +1,8 @@
 import React from 'react';
 import Identicon from 'identicon.js';
-import Certificates from './Certificates'
+import Certificates from './components/Certificates'
+import ViewCert from './components/ViewCert';
+import ShareCert from './components/ShareCert';
 
 import {
   Container,
@@ -70,7 +72,7 @@ const Renderer = ({ certificates, uploadCertificate, captureFile }) => {
 
         <TableContainer bg={'white'}>
           <Table variant="simple">
-            <TableCaption>Imperial to metric conversion factors</TableCaption>
+            <TableCaption>Certificates are stored on IPFS and verify by Ethereum smart contract</TableCaption>
             <Thead>
               <Tr>
                 <Th w={2}>Owner</Th>
@@ -91,12 +93,12 @@ const Renderer = ({ certificates, uploadCertificate, captureFile }) => {
                         certificate.timestamp.toNumber() * 1000
                       ).toLocaleString()}
                     </Td>
-                    <Td>
-                      <Text w={'sm'}>{certificate.description}</Text>
+                    <Td w={'sm'}>
+                      <Text >{certificate.description}</Text>
                     </Td>
                     <Td>
-                      <Button mr={2}>View</Button>
-                      <Button>Share</Button>
+                    <ViewCert certificate={certificate}/>
+                    <ShareCert certificate={certificate}/>
                     </Td>
                   </Tr>
                 );

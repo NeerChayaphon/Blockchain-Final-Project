@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Renderer from './Renderer.js';
 import Certification from './Certification.json';
-import Certificates from './Certificates.js';
-import Navbar from './Navbar.js';
+import Certificates from './components/Certificates.js';
+import Navbar from './components/Navbar.js';
 import { Box } from '@chakra-ui/react';
 
 // https://github.com/mnzsss/react-chakra-pagination
