@@ -50,7 +50,7 @@ const Search = () => {
   };
 
   // Load certificate
-  const fetchImgages = async (contract, CertID) => {
+  const fetchCertificates = async (contract, CertID) => {
     const certificatesCount = await contract.certificateCount();
     for (var i = 1; i <= certificatesCount.toNumber(); i++) {
       const certificate = await contract.certificates(i);
@@ -75,7 +75,7 @@ const Search = () => {
   const [ID, setID] = React.useState('');
   const handleSubmit = async e => {
     e.preventDefault();
-    await fetchImgages(contract, ID);
+    await fetchCertificates(contract, ID);
   };
 
   return (
