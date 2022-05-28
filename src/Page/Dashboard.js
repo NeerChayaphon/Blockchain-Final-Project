@@ -32,12 +32,12 @@ function Dashboard() {
     );
     setContract(deployedContract);
 
-    await fetchImgages(deployedContract);
+    await fetchCertificates(deployedContract);
     setLoading(false);
   };
 
   // Load certificates
-  const fetchImgages = async contract => {
+  const fetchCertificates = async contract => {
     const certificatesCount = await contract.certificateCount();
     for (var i = 1; i <= certificatesCount.toNumber(); i++) {
       const certificate = await contract.certificates(i);
@@ -72,7 +72,6 @@ function Dashboard() {
         return;
       }
       //uploading hash to blockchain
-      const testOwner = 'Neer';
       const tx = await contract.uploadCertificate(
         result[0].hash,
         owner,
